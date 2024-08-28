@@ -14,14 +14,32 @@
         img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <img src="tacogiraffe.png" alt="My Image">
-    <audio autoplay>
+    <audio id="myAudio" autoplay>
         <source src="Rick.MP3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <button onclick="toggleAudio()">Toggle Audio</button>
+
+    <script>
+        function toggleAudio() {
+            var audio = document.getElementById('myAudio');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
 </body>
 </html>
